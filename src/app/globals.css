@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Palette « lac Kivu » inspirée du tableau de bord de référence */
+@theme {
+  --color-ocean-50: #e8f4f7;
+  --color-ocean-100: #c9e6ee;
+  --color-ocean-300: #6fb3c6;
+  --color-ocean-500: #1f7f97;
+  --color-ocean-600: #186f86;
+  --color-ocean-700: #145e72;
+  --color-ocean-800: #114f61;
+  --color-ocean-900: #0d4152;
+  --color-ocean-950: #0a3141;
+
+  --color-lime-soft: #d9f99d;
+  --color-mint-card: #a7efc0;
+  --color-sky-card: #b3e0fb;
+  --color-sun: #fcd765;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Carte « verre dépoli » sur fond océan */
+@utility glass {
+  background-color: rgb(255 255 255 / 0.08);
+  border: 1px solid rgb(255 255 255 / 0.14);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+@utility scrollbar-none {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
